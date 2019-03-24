@@ -21,13 +21,13 @@ def formlist_aux(num):
 
 def palindromo(num):
     if isinstance (num, int) and num > 0: 
-        return pal_aux(num, contar(num, 0))
+        return pal_aux(num, num, contar(num, 0))
     else: return "El valor ingresado nu cumple con las condiciones"
-def pal_aux(num, n):
+def pal_aux(num,num1, n):
     if num == 0:
         return True
-    if num%10 == (num//10**(n-1)):
-        return pal_aux(num//10, n-1)
+    if num%10 == (num1//(10**(n-1))):
+        return pal_aux(num//10, num1%10**(n-1), n-1)
     else: return False
 def contar(num, contador):
     if num == 0:
